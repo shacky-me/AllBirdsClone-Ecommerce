@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth overflow-y-auto overflow-x-hidden h-screen">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/src/output.css" rel="stylesheet">
+    <title>All Birds</title>
+</head>
+
+<body>
+    <header
+        class="sticky top-0 left-0 right-0 z-[2000] h-[60px] w-full flex justify-around font-[500] p-4 space-x-8 bg-[#ffffff]">
+        <!-- mobile only menu icon -->
+        <div class="menu-icon lg:hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" class="cursor-pointer" height="24px" viewBox="0 -960 960 960"
+                width="24px" fill="#000000">
+                <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+            </svg>
+        </div>
+
+        <!-- Close icon -->
+        <div class="close-icon lg:hidden hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000">
+                <path
+                    d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+            </svg>
+        </div>
+
+        <!-- Desktop navigation -->
+        <nav class="list-none">
+            <ul class="hidden md:hidden lg:flex gap-8">
+                <li class="hover:underline"><a href="">Men</a></li>
+                <li class="hover:underline"><a href="">Women</a></li>
+                <li class="hover:underline"><a href="">Socks</a></li>
+                <li class="hover:underline"><a href="">New Arrivals</a></li>
+            </ul>
+        </nav>
+
+        <!-- expressions Logo -->
+        <div class="w-[100px] mx-auto">
+            <h1>exPressions</h1>
+        </div>
+
+        <nav class="list-none">
+            <ul class="hidden md:hidden lg:flex gap-3">
+                <li class="hover:underline"><a href="">Sustainability</a></li>
+                <li class="hover:underline"><a href="">Rerun</a></li>
+                <li class="hover:underline"><a href="">Stores</a></li>
+            </ul>
+        </nav>
+
+        <!-- icons -->
+        <div class="flex gap-3.5 space-x-5.5">
+            <!-- search icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="cursor-pointer max-sm:hidden" height="24px"
+                viewBox="0 -960 960 960" width="24px" fill="#000000">
+                <path
+                    d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z" />
+            </svg>
+
+            <!-- user icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="cursor-pointer max-md:hidden md:hidden lg:flex" height="24px"
+                viewBox="0 -960 960 960" width="24px" fill="##000000">
+                <path
+                    d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Zm80-80h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T560-640q0-33-23.5-56.5T480-720q-33 0-56.5 23.5T400-640q0 33 23.5 56.5T480-560Zm0-80Zm0 400Z" />
+            </svg>
+
+            <!-- help icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="cursor-pointer max-md:hidden md:hidden lg:flex" height="24px"
+                viewBox="0 -960 960 960" width="24px" fill="##000000">
+                <path
+                    d="M478-240q21 0 35.5-14.5T528-290q0-21-14.5-35.5T478-340q-21 0-35.5 14.5T428-290q0 21 14.5 35.5T478-240Zm-36-154h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342-618l66 26q5-18 22.5-39t53.5-21q32 0 48 17.5t16 38.5q0 20-12 37.5T506-526q-44 39-54 59t-10 73Zm38 314q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
+            </svg>
+
+            <!-- cart icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="cursor-pointer" height="24px" viewBox="0 -960 960 960"
+                width="24px" fill="##000000">
+                <path
+                    d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z" />
+            </svg>
+
+        </div>
+    </header>
+
+    <!-- Mobile navigation links -->
+    <nav class="mobile-menu hidden lg:hidden w-full h-screen uppercase font-[500] text-sm z-[3000]">
+        <ul class="flex flex-col p-0 list-none">
+            <li class="w-full border-x border-b border-gray-300">
+                <a href="" class="block w-full pt-7 px-4 py-4">Men</a>
+            </li>
+            <li class="w-full border-x border-b border-gray-300">
+                <a href="" class="block w-full pt-5 px-4 py-4">Women</a>
+            </li>
+            <li class="w-full border-x border-b border-gray-300">
+                <a href="" class="block w-full pt-5 px-4 py-4">Socks</a>
+            </li>
+            <li class="w-full border-x border-b border-gray-300">
+                <a href="" class="block w-full pt-5 px-4 py-4">New Arrivals</a>
+            </li>
+            <li class="w-full border-x border-b border-gray-300">
+                <a href="" class="block w-full pt-5 px-4 py-4">Sustainability</a>
+            </li>
+            <li class="w-full border-x border-b border-gray-300">
+                <a href="" class="block w-full pt-5 px-4 py-4">Rerun</a>
+            </li>
+            <li class="w-full border-x border-b border-gray-300">
+                <a href="" class="block w-full pt-5 px-4 py-4">Stores</a>
+            </li>
+            <li class="w-full border-x border-b border-gray-300">
+                <a href="" class="block w-full pt-5 px-4 py-4">Account</a>
+            </li>
+            <li class="w-full border-x border-b border-gray-300">
+                <a href="" class="block w-full pt-5 px-4 py-4">Help</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- search bar in md devices and below-->
+        <section>
+
+            <div
+                class="flex items-center max-sm:flex max-md:hidden md:hidden lg:hidden bg-gray-50 border border-gray-300 rounded-full overflow-hidden mt-12 px-2 py-1 w-[95%] mx-auto">
+                <!-- search icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="cursor-pointer h-5 w-5" height="24px"
+                    viewBox="0 -960 960 960" width="24px" fill="#000000">
+                    <path
+                        d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z" />
+                </svg>
+                <input type="text" placeholder="Enter Search Item"
+                    class="ml-2 outline-none border-none w-full text-sm text-black bg-transparent placeholder-gray-700">
+            </div>
+        </section>
+
+        <!-- hero section -->
+        <section>
+            <div class="h-screen pt-[30px]">
+                <div class="flex justify-center items-center space-x-5 text-sm gap-3.5 p-4 bg-gray-50">
+                    <a href="">Men's shoes</a>
+                    <a href="">Women's shoes</a>
+                    <a href="">New Arrivals</a>
+                </div>
+                <!-- hero image -->
+                <div
+                    class="relative bg-[url('/src/assets/images/herounsplash.jpg')] bg-cover bg-center bg-no-repeat w-full h-[500px]">
+                    <!-- hero text content -->
+                    <div class="flex justify-end items-end absolute bottom-0 left-0 z-30 p-6 ">
+                        <div class="border-2 border-[#ca9a40] p-4 bg-transparent w-full md:w-[50%] rounded-2xl">
+                            <h1
+                                class="text-2xl text-[#990404] md:text-4xl font-bold uppercase tracking-wide leading-tight">
+                                Feel Good.
+                                Be Good.
+                                Look Better.
+                                Live Boldly.</h1>
+                            <p class="mt-4 text-[#f7faff] text-lg md:text-xl"> Discover timeless pieces crafted for
+                                confidence and comfort.
+                                Fashion that moves with you — every step of the way.</p>
+                            <a href=""
+                                class="mt-6 inline-block bg-black text-white px-6 py-3 rounded-full w-full md:w-[50%] uppercase text-sm tracking-wider hover:bg-gray-800 transition">Shop
+                                Our collection</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ******section page number TWO****** -->
+        <section class="p-8 w-[90%] mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-3 w-full transition-all duration-500 ease-in-out">
+
+                <!-- Best Sellers -->
+                <div
+                    class="relative w-full overflow-hidden transform hover:scale-105 transition-transform duration-500">
+                    <img src="/src/assets/images/nikeyAiforce.jpg" alt="ShoesNike" class="h-full w-full object-cover">
+                    <div class="flex justify-center items-center absolute top-0 bottom-0 right-0 left-0">
+                        <h2 class="text-[#bb3b00] text-center text-5xl font-bold border-2 rounded-full p-4">Best Sellers
+                        </h2>
+                    </div>
+                </div>
+
+                <!-- New Arrivals -->
+                <div
+                    class="relative w-full overflow-hidden transform hover:scale-105 transition-transform duration-500">
+                    <img src="/src/assets/images/unsplashmyimage.jpg" alt="another pair of shoes"
+                        class="h-full w-full object-cover">
+                    <div class="flex justify-center items-center absolute top-0 bottom-0 left-0 right-0">
+                        <h2 class="text-[#bb003e] text-center text-5xl font-bold border-2 rounded-full p-4">New Arrivals
+                        </h2>
+                    </div>
+                </div>
+
+                <!-- Essentials -->
+                <div
+                    class="relative w-full overflow-hidden transform hover:scale-105 transition-transform duration-500">
+                    <img src="/src/assets/images/sneakers2.jpg" alt="shoesTwo" class="h-full w-full object-cover">
+                    <div class="flex justify-center items-center absolute top-0 bottom-0 left-0 right-0">
+                        <h2 class="text-[#0c685c] text-center text-5xl font-bold border-2 rounded-full p-4">Essentials
+                        </h2>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ******section page number Three -->
+        <section>
+            <div class="p-8 space-x-1.5 space-y-10 text-center leading-7 tracking-tight bg-[#000000] text-[#126840]">
+                <h1 class="text-3xl font-bold">Step Into Style; Discover Your Perfect Pair</h1>
+                <p class="text-lg w-[50%] text-left mx-auto">Welcome to our exclusive collection where
+                    comfort meets
+                    style.
+                    Whether
+                    you're chasing
+                    everyday
+                    essentials or the latest arrivals, we offer top-quality footwear designed for every step of your
+                    journey. Browse our best sellers, explore new trends, and find the perfect fit - all in one place.
+                </p>
+            </div>
+        </section>
+
+        <!-- ******section page number Four -->
+        <section class="p-16">
+            <div class="space-x-3.5 space-y-5 leading-8 tracking-tight">
+                <div class="text-center space-y-5">
+                    <h1 class="font-bold text-2xl">Want First Dibs?</h1>
+                    <p class="text-lg text-left w-[50%] mx-auto">Join our email list and be the first to know about new
+                        limited
+                        edition
+                        products,
+                        material
+                        innovations, and lots of other fun updates.</p>
+                </div>
+
+                <div class="flex justify-center items-center">
+                    <form class="flex flex-col md:flex-row w-[100%] md:w-[50%] gap-2">
+                        <input type="email" placeholder="Enter your email address"
+                            class="border-1 border-gray-300 rounded-full px-4 py-2 flex-grow">
+                        <button type="submit" class="bg-[#bb3b00] text-white px-6 py-2 rounded-sm md:rounded-full">Sign
+                            Up</button>
+                    </form>
+                </div>
+
+                <div class="flex justify-center items-center">
+                    <p class="text-sm">By signing up, you agree to our <a href="" class="text-[#bb3b00]">Privacy
+                            Policy</a> and <a href="" class="text-[#bb3b00]">Terms of Service</a>.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-black text-white py-10">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 px-6">
+            <!-- About Section -->
+            <div>
+                <h3 class="font-bold text-lg mb-4">About Us</h3>
+                <p class="text-sm leading-6">
+                    Discover timeless pieces crafted for confidence and comfort. Fashion that moves with you — every
+                    step of the way.
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h3 class="font-bold text-lg mb-4">Quick Links</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:underline">Men</a></li>
+                    <li><a href="#" class="hover:underline">Women</a></li>
+                    <li><a href="#" class="hover:underline">Socks</a></li>
+                    <li><a href="#" class="hover:underline">New Arrivals</a></li>
+                </ul>
+            </div>
+
+            <!-- Customer Service -->
+            <div>
+                <h3 class="font-bold text-lg mb-4">Customer Service</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:underline">Help Center</a></li>
+                    <li><a href="#" class="hover:underline">Returns</a></li>
+                    <li><a href="#" class="hover:underline">Shipping Info</a></li>
+                    <li><a href="#" class="hover:underline">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Newsletter -->
+            <div>
+                <h3 class="font-bold text-lg mb-4">Stay Connected</h3>
+                <form class="flex flex-col space-y-4">
+                    <input type="email" placeholder="Enter your email"
+                        class="px-4 py-2 rounded-full text-black text-sm">
+                    <button type="submit"
+                        class="bg-[#bb3b00] text-white px-6 py-2 rounded-full text-sm hover:bg-[#a33200] transition">
+                        Subscribe
+                    </button>
+                </form>
+                <p class="text-xs mt-4">
+                    By subscribing, you agree to our <a href="#" class="text-[#bb3b00] hover:underline">Privacy
+                        Policy</a>.
+                </p>
+            </div>
+        </div>
+        <div class="mt-10 border-t border-gray-700 pt-6 text-center text-sm">
+            <p>&copy; 2025 exPressions. All rights reserved. inspired by AllBirds</p>
+        </div>
+    </footer>
+    <script src=" /src/main.js">
+    </script>
+</body>
+
+</html>
